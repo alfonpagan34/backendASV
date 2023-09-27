@@ -1,0 +1,25 @@
+
+
+<div *ngIf="prediccion" class="container text-center">
+    <mat-card class="example-card">
+        <mat-card-header class="titulo">
+          <mat-card-title>{{municipio}}</mat-card-title>
+          <mat-card-subtitle>{{tomorrowDate | date: 'dd/MM/yyyy'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <h2>
+            {{prediccion.temperatura | number:'1.0-0'}} {{prediccion.unidadTemperatura | UnidadPipe}}
+          </h2>
+          <p>Precipitaciones: </p>
+          <div class="row">
+            <div *ngFor="let prob of prediccion.probPrecipitacion" class="col-3">
+              {{prob.value}} %
+            </div>
+            <hr>
+            <div *ngFor="let prob of prediccion.probPrecipitacion" class="col-3">
+                {{prob.periodo}}
+            </div>
+          </div>
+        </mat-card-content>
+    </mat-card>
+</div>

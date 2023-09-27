@@ -1,0 +1,8 @@
+
+export enum UNIDADES_MEDIDA {
+    G_CEL='G_CEL',
+    G_FAH='G_FAH',
+    G_KEL='G_KEL'
+} 
+export const UNIDADES = [UNIDADES_MEDIDA.G_CEL,UNIDADES_MEDIDA.G_FAH,UNIDADES_MEDIDA.G_KEL];
+// ['ºC', 'ºF', 'K'];

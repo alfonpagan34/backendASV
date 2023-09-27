@@ -1,0 +1,26 @@
+
+<div class="container mt-3">
+  <form [formGroup]="formGroup">
+    <mat-form-field appearance="fill" class="mr-3">
+      <mat-label>
+        Municipio
+      </mat-label>
+      <input formControlName="municipio" matInput type="text" [matAutocomplete]="auto" />
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectMunicipio($event)">
+          <mat-option *ngFor="let municipio of municipios" [value]="municipio.nombre">
+            {{municipio.nombre}}
+          </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    
+
+    <mat-form-field appearance="fill" class="margin-left">
+        <mat-label>Unidad de medida</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let unidad of unidades" [value]="unidad" (onSelectionChange)="selectUnidad(unidad,$event)">
+            {{unidad | UnidadPipe}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+  </form>
+</div>
