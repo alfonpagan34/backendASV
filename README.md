@@ -1,4 +1,4 @@
-# Run npm install to install dependencies.
+Run npm install to install dependencies.
 
 
-# Run ng serve to start the project.
+Run ng serve to start the project.
